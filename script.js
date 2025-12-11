@@ -1,5 +1,6 @@
 let playerScore = 0;
 let computerScore = 0;
+let winner = 'It was a draw'
 
 // Get User Choice
 function getUserChoice() {
@@ -52,11 +53,13 @@ function startGame() {
 \nGood luck, and may the best hand win!
 \n------------------------------------------`);
 
-  for (let i = 0; i < 5; i++) setTimeout(playRound, 1000);
+  for (let i = 0; i < 5; i++) playRound()
+  playerScore > computerScore ? winner = 'You' : winner = 'Mo'
 
-  console.log("Game Ended!");
+  console.log(`\n------------------------------------------\nGame Ended!\n------------------------------------------
+`)
   console.log(
-    `Your Score: ${playerScore}\nMo's Score: ${computerScore}\n\nWinner: ${t}`
+    `Your Score: ${playerScore}\nMo's Score: ${computerScore}\n\nWinner: ${winner}`
   );
 }
 
