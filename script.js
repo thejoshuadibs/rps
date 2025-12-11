@@ -54,7 +54,7 @@ function startGame() {
 \n------------------------------------------`);
 
   for (let i = 0; i < 5; i++) playRound()
-  playerScore > computerScore ? winner = 'You' : winner = 'Mo'
+  playerScore == computerScore ? winner = 'It was a draw' : (playerScore > computerScore ? winner = 'You' : winner = 'Mo' )
 
   console.log(`\n------------------------------------------\nGame Ended!\n------------------------------------------
 `)
