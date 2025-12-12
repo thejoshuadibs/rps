@@ -1,11 +1,16 @@
 let playerScore = 0;
 let computerScore = 0;
-let winner = 'It was a draw'
+let winner = "It was a draw";
 
 // Get User Choice
 function getUserChoice() {
   const choice = prompt("Choose one: ROCK | PAPER | SCISSORS");
-  return choice.toLowerCase();
+  choice.toLowerCase();
+  if (choice != "rock" && choice != "paper" && choice != "scissors") {
+    alert('Invalid Choice')
+    return getUserChoice();
+  }
+  return choice;
 }
 
 // Get Computer Choice
@@ -53,11 +58,15 @@ function startGame() {
 \nGood luck, and may the best hand win!
 \n------------------------------------------`);
 
-  for (let i = 0; i < 5; i++) playRound()
-  playerScore == computerScore ? winner = 'It was a draw' : (playerScore > computerScore ? winner = 'You' : winner = 'Mo' )
+  for (let i = 0; i < 5; i++) playRound();
+  playerScore == computerScore
+    ? (winner = "It was a draw")
+    : playerScore > computerScore
+    ? (winner = "You")
+    : (winner = "Mo");
 
   console.log(`\n------------------------------------------\nGame Ended!\n------------------------------------------
-`)
+`);
   console.log(
     `Your Score: ${playerScore}\nMo's Score: ${computerScore}\n\nWinner: ${winner}`
   );
