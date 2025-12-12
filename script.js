@@ -19,7 +19,7 @@ function getComputerChoice() {
   return choice.toLowerCase();
 }
 
-// Computer Choices to Determine Winner
+// Compare Choices to Determine Winner
 function determineWinner(user, computer) {
   if (user == computer) return "tie";
   if (
@@ -34,12 +34,14 @@ function determineWinner(user, computer) {
   return "lose";
 }
 
+//Display the result of esch game round
 function displayResult(user, computer, result) {
   if (result == "tie")
     console.log(`You: ${user} \nMo: ${computer} \nResult: It's a tie`);
   else console.log(`You: ${user} \nMo: ${computer} \nResult: You ${result}`);
 }
 
+//Invoke each round gameplay
 function playRound() {
   const user = getUserChoice();
   const computer = getComputerChoice();
@@ -47,6 +49,7 @@ function playRound() {
   displayResult(user, computer, result);
 }
 
+//The game logic calling all five rounds and displaying the opening and ending screen
 function startGame() {
   console.log(`\n------------------------------------------
     \n⚔️ Welcome to Rock, Paper, Scissors: Console Clash! ⚔️
@@ -72,4 +75,5 @@ function startGame() {
   );
 }
 
+//Invoke the game
 startGame();
