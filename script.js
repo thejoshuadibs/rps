@@ -2,6 +2,8 @@ let playerScore = 0;
 let computerScore = 0;
 let winner = "It was a draw";
 
+console.log("What the F*CK!");
+
 // Get User Choice
 function getUserChoice() {
   const choice = prompt("Choose one: ROCK | PAPER | SCISSORS");
